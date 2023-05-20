@@ -23,7 +23,7 @@ In the `main.bats` file, there is a convention to prefix a test description with
 | | |
 |---|---|
 | Required | Must be fulfilled by the tldr client. |
-| Optional | A nice to have for tldr clients to fulfil. |
+| Optional | A nice to have for tldr clients. |
 | Recommends | Recommended to aid user-experience. |
 
 **Optional** and **Recommends** have a lot of overlap, so this may be revised in future.
