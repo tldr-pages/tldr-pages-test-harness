@@ -30,7 +30,7 @@ In the `main.bats` file, there is a convention to prefix a test description with
 
 ### Makefile
 
-If you're familiar with Node.js development, you may be aware of [`package.json` scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts). A Makefile can be used for a similar purpose, but pre-installed on most Linux distributions and stack agnostic.
+If you're familiar with Node.js development, you may be aware of [`package.json` scripts](https://docs.npmjs.com/cli/v9/using-npm/scripts). A Makefile can be used for a similar purpose, but is stack agnostic and pre-installed on most Linux distributions.
 
 We use the Makefile to define any tasks or dependencies.
 
