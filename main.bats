@@ -1,12 +1,19 @@
 #!/usr/bin/env bats
 
-setup() {
+# Tests expect the envvar PATH_TO_TLDR_CLIENT to be set, exits if not.
+# If an update command exists, do it before running through tests.
+setup_file() {
   if [[ -z $PATH_TO_TLDR_CLIENT ]]
   then
     echo "Expected envvar PATH_TO_TLDR_CLIENT to be set. Exiting!"
     return 1
   fi
 
+  $PATH_TO_TLDR_CLIENT --update || :
+}
+
+# Set the language envvars to English explicitly.
+setup() {
   export LANG="en_US.UTF-8"
   export LANGUAGE="en_GB:en"
   echo -e "Running test suite for $PATH_TO_TLDR_CLIENT\n"
