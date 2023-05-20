@@ -20,8 +20,8 @@ The bulk of the code is in the `main.bats` file, which is a test suite that run 
 
 In the `main.bats` file, there is a convention to prefix a test description with the compliance level it's associated with. There are currently three levels of compliance a specification can fall under.
 
-| | | |
-|---|---|---|
+| | |
+|---|---|
 | Required | Must be fulfilled by the tldr client. |
 | Optional | A nice to have for tldr clients to fulfil. |
 | Recommends | Recommended to aid user-experience. |
