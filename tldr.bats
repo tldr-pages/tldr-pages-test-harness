@@ -19,9 +19,8 @@ setup() {
   echo -e "Running test suite for $PATH_TO_TLDR_CLIENT\n"
 }
 
-# bats test_tags=required
-
 # Don't include curly braces in tests, clients are free to remove/replace them.
+# bats test_tags=required
 @test "REQUIRED: show tldr-page for tldr" {
   run $PATH_TO_TLDR_CLIENT tldr
   [[ $? -eq 0 ]]
@@ -30,6 +29,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#page-names
+# bats test_tags=required
 @test "REQUIRED: show tldr-page for TLDR (must be treated as lowercase)" {
   run $PATH_TO_TLDR_CLIENT TLDR
   [[ $? -eq 0 ]]
@@ -37,6 +37,7 @@ setup() {
   [[ "$output" = *"https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#command-line-interface"* ]]
 }
 
+# bats test_tags=required
 @test "REQUIRED: show tldr-page for git-switch (hyphenated page names)" {
   run $PATH_TO_TLDR_CLIENT git-switch
   [[ $? -eq 0 ]]
@@ -45,6 +46,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#page-names
+# bats test_tags=required
 @test "REQUIRED: show tldr-page for git switch (hyphen is implied and must be inserted transparently)" {
   run $PATH_TO_TLDR_CLIENT git switch
   [[ $? -eq 0 ]]
@@ -53,30 +55,35 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#if-a-page-is-not-found
+# bats test_tags=required
 @test "REQUIRED: non-zero exit status for page that does not exist" {
   run $PATH_TO_TLDR_CLIENT this-page-will-never-exist
   [[ $status -ne 0 ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#page-names
+# bats test_tags=required
 @test "REQUIRED: non-zero exit status when page that does exist is not first argument" {
   run $PATH_TO_TLDR_CLIENT this-page-will-never-exist tldr
   [[ $status -ne 0 ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: show client version with --version" {
   run $PATH_TO_TLDR_CLIENT --version
   [[ $? -eq 0 ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: show client version with -v (version shorthand)" {
   run $PATH_TO_TLDR_CLIENT -v
   [[ $? -eq 0 ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: show platform specific version of page with --platform" {
   run $PATH_TO_TLDR_CLIENT --platform windows mkdir
   [[ $? -eq 0 ]]
@@ -85,6 +92,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: show platform specific version of page with -p (platform shorthand)" {
   run $PATH_TO_TLDR_CLIENT -p windows mkdir
   [[ $? -eq 0 ]]
@@ -93,12 +101,14 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: non-zero exit status with -p (platform shorthand) should error without value" {
   run $PATH_TO_TLDR_CLIENT -p
   [[ $status -ne 0 ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: non-zero exit status with --platform (platform) should error without value" {
   run $PATH_TO_TLDR_CLIENT --platform
   [[ $status -ne 0 ]]
@@ -106,6 +116,7 @@ setup() {
 
 # If the -l or --list argument is supported, it must show one command per line.
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=required
 @test "REQUIRED: if list argument supported, output shows one page per line (succeeds if not supported)" {
   run $PATH_TO_TLDR_CLIENT --list
 
@@ -120,6 +131,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#language
+# bats test_tags=required
 @test "REQUIRED: if LANG and LANGUAGE envvars are set to a supported language, output must use that language" {
   export LANG="nl.UTF-8"
   export LANGUAGE="nl"
@@ -131,6 +143,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#language
+# bats test_tags=required
 @test "REQUIRED: if LANG and LANGUAGE envvars are not set, output must be in English" {
   export LANG=""
   export LANGUAGE=""
@@ -141,9 +154,8 @@ setup() {
   [[ "$output" = *"https://manned.org/7z"* ]]
 }
 
-# bats test_tags=optional
-
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=optional
 @test "OPTIONAL: supports --list argument to list all pages" {
   run $PATH_TO_TLDR_CLIENT --list
   [[ "$output" = *"tldr"* ]]
@@ -152,6 +164,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=optional
 @test "OPTIONAL: supports -l (list shorthand) argument to list all pages" {
   run $PATH_TO_TLDR_CLIENT --list
   [[ "$output" = *"tldr"* ]]
@@ -160,6 +173,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=optional
 @test "OPTIONAL: supports --language argument" {
   run $PATH_TO_TLDR_CLIENT --language nl 7z
   [[ $status -eq 0 ]]
@@ -169,6 +183,7 @@ setup() {
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
+# bats test_tags=optional
 @test "OPTIONAL: supports -L (language shorthand) argument" {
   run $PATH_TO_TLDR_CLIENT -L nl 7z
   [[ $status -eq 0 ]]
@@ -177,9 +192,8 @@ setup() {
   [[ "$output" = *"https://manned.org/7z"* ]]
 }
 
-# bats_test_tags=recommends
-
 # https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#directory-structure
+# bats_test_tags=recommends
 @test "RECOMMENDS: treats macos platform as osx" {
   run $PATH_TO_TLDR_CLIENT --platform macos applecamerad
   [[ $status -eq 0 ]]
