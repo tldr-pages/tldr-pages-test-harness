@@ -26,7 +26,7 @@ setup() {
   run $PATH_TO_TLDR_CLIENT tldr
   [[ $? -eq 0 ]]
   [[ "$output" = *"Display simple help pages for command-line tools from the tldr-pages project."* ]]
-  [[ "$output" = *"https://tldr.sh"* ]]
+  [[ "$output" = *"https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#command-line-interface"* ]]
 }
 
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#page-names
@@ -34,7 +34,7 @@ setup() {
   run $PATH_TO_TLDR_CLIENT TLDR
   [[ $? -eq 0 ]]
   [[ "$output" = *"Display simple help pages for command-line tools from the tldr-pages project."* ]]
-  [[ "$output" = *"https://tldr.sh"* ]]
+  [[ "$output" = *"https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#command-line-interface"* ]]
 }
 
 @test "REQUIRED: show tldr-page for git-switch (hyphenated page names)" {
