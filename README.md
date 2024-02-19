@@ -25,7 +25,7 @@ make validate
 Alternatively, you can test any arbitrary binary by specifying the `PATH_TO_TLDR_CLIENT` environment variable before hand:
 
 ```sh
-PATH_TO_TLDR_CLIENT={{path/to/file}} make validate
+PATH_TO_TLDR_CLIENT={{path/to/binary}} make validate
 ```
 
 ## Dependencies

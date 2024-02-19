@@ -34,7 +34,7 @@ If you're familiar with Node.js development, you may be aware of [`package.json`
 
 We use the Makefile to define any tasks or dependencies.
 
-To run the tests you can do the following command:
+To run the tests, execute the following command:
 
 ```sh
 make validate
