@@ -28,6 +28,8 @@ Alternatively, you can test any arbitrary binary by specifying the `PATH_TO_TLDR
 PATH_TO_TLDR_CLIENT={{path/to/binary}} make validate
 ```
 
+There are also the `validate-level-2` and `validate-level-3` tasks to check if clients adhere to optional parts of the spec.
+
 ## Dependencies
 
 * [Bats](https://github.com/bats-core/bats-core)
