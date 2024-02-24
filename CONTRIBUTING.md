@@ -14,11 +14,11 @@ You should now be ready to develop!
 
 ## Project Structure
 
-### Bats
+### Test Cases
 
-The bulk of the code is in the `main.bats` file, which is a test suite that run over a given tldr client. Read the [Bats documentation](https://bats-core.readthedocs.io/en/stable/writing-tests.html) for more information on how to write tests.
+Tests are maintained in `main.bats`, which all run run over a given tldr client. Read the [Bats documentation](https://bats-core.readthedocs.io/en/stable/writing-tests.html) for more information on how to write tests.
 
-In the `main.bats` file, there is a convention to prefix a test description with the compliance level it's associated with. There are currently three levels of compliance a specification can fall under.
+In `main.bats`, there is a convention to prefix a test description with the compliance level it's associated with. There are currently three levels of compliance a specification can fall under.
 
 | | |
 |---|---|
@@ -27,6 +27,22 @@ In the `main.bats` file, there is a convention to prefix a test description with
 | Recommends | Recommended to aid user-experience. |
 
 **Optional** and **Recommends** have a lot of overlap, so this may be revised in future.
+
+### Dockerfiles
+
+Popular clients have a Dockerfile defined in the `client-configs/` directory. This allows us to test how clients perform against the test suite locally or in CI.
+
+It's preferred to get the binary from the latest release or an authoritative source. Avoid distribution specific releases as they are often outdated. As a guideline: 
+
+* Use the first-party tooling for the client's language. Such as npm for a Node.js client, or Cargo for a Rust client.
+* If that's not available, clone the sources from the client's git repository and compile from source.
+
+You can execute a Dockerfile with the following commands:
+
+```sh
+docker build -t tldr-test:client-name -f client-configs/client-name/Dockerfile .
+docker run -it tldr-tests:client-name make validate
+```
 
 ### Makefile
 

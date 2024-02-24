@@ -14,6 +14,13 @@
 
 This is a Bats test-suite that validates if a tldr-client is compatible with the [client specifications](https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md) set out in the [tldr](https://github.com/tldr-pages/tldr) repository.
 
+## Results
+
+| Client | Compliance |
+|---|---|
+| [tealdeer](https://github.com/dbrgn/tealdeer) | Perfect (Level 3) |
+| [tldr-node-client](https://github.com/tldr-pages/tldr-node-client) | Fail |
+
 ## Usage
 
 You can run the `validate` task to test the `tldr` command found on your path:
