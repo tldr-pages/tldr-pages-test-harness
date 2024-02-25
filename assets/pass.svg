@@ -1,0 +1,7 @@
+<svg viewBox="0 0 72 32">
+  <rect width="72" height="32" fill="#11dd77" rx="4" ry="4"/>
+  <rect y="8" width="72" height="16" fill="white"/>
+  <text x="36" y="6" font-size="6" width="72" height="32" text-anchor="middle" fill="white">tldr-pages specifications</text>
+  <text x="36" y="30" font-size="6" width="72" height="32" text-anchor="middle" fill="white">compliance level</text>
+  <text x="36" y="22" width="72" height="32" text-anchor="middle">PASS</text>
+</svg>

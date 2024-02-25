@@ -18,8 +18,8 @@ This is a Bats test-suite that validates if a tldr-client is compatible with the
 
 | Client | Compliance |
 |---|---|
-| [tealdeer](https://github.com/dbrgn/tealdeer) | Perfect (Level 3) |
-| [tldr-node-client](https://github.com/tldr-pages/tldr-node-client) | Fail |
+| [tealdeer](https://github.com/dbrgn/tealdeer) | ![tldr-pages compliance level for tealdeer](https://SethFalco.github.io/tldr-pages-test-harness/tealdeer.png) |
+| [tldr-node-client](https://github.com/tldr-pages/tldr-node-client) | ![tldr-pages compliance level for tldr-node-client](https://SethFalco.github.io/tldr-pages-test-harness/tldr-node-client.png) |
 
 ## Usage
 

@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  test-clients:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run test suite
+        run: make test-clients
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: /tmp/dist
+  deploy:
+    needs: test-clients
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
