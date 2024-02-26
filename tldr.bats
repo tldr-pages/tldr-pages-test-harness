@@ -135,6 +135,7 @@ setup() {
 @test "REQUIRED: if LANG and LANGUAGE envvars are set to a supported language, output must use that language" {
   export LANG="nl.UTF-8"
   export LANGUAGE="nl"
+  $PATH_TO_TLDR_CLIENT --update || :
   run $PATH_TO_TLDR_CLIENT 7z
   [[ $status -eq 0 ]]
   [[ "$output" = *"7z"* ]]
