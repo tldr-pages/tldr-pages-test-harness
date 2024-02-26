@@ -12,7 +12,7 @@
 
 ## About
 
-This is a Bats test-suite that validates if a tldr-client is compatible with the [client specifications](https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md) set out in the [tldr](https://github.com/tldr-pages/tldr) repository.
+This is a Bats test-suite that validates if a tldr-pages client is compatible with the [client specifications](https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md) set out in the [tldr](https://github.com/tldr-pages/tldr) repository.
 
 ## Results
 

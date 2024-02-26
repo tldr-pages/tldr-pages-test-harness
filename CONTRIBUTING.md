@@ -16,13 +16,13 @@ You should now be ready to develop!
 
 ### Test Cases
 
-Tests are maintained in `main.bats`, which all run run over a given tldr client. Read the [Bats documentation](https://bats-core.readthedocs.io/en/stable/writing-tests.html) for more information on how to write tests.
+Tests are maintained in `main.bats`, which all run run over a given tldr-pages clients. Read the [Bats documentation](https://bats-core.readthedocs.io/en/stable/writing-tests.html) for more information on how to write tests.
 
 In `main.bats`, there is a convention to prefix a test description with the compliance level it's associated with. There are currently three levels of compliance a specification can fall under.
 
 | | |
 |---|---|
-| Required | Must be fulfilled by the tldr client. |
+| Required | Must be fulfilled by the tldr-pages clients. |
 | Optional | A nice to have for tldr clients. |
 | Recommends | Recommended to aid user-experience. |
 
@@ -30,7 +30,7 @@ In `main.bats`, there is a convention to prefix a test description with the comp
 
 ### Dockerfiles
 
-Popular clients have a Dockerfile defined in the `client-configs/` directory. This allows us to test how clients perform against the test suite locally or in CI.
+Popular clients have a Dockerfile defined in the `dockerfiles/` directory. This allows us to test how clients perform against the test suite locally or in CI.
 
 It's preferred to get the binary from the latest release or an authoritative source. Avoid distribution specific releases as they are often outdated. As a guideline: 
 
