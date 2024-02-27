@@ -19,7 +19,10 @@ This is a Bats test-suite that validates if a tldr-pages client is compatible wi
 | Client | Compliance |
 |---|---|
 | [tealdeer](https://github.com/dbrgn/tealdeer) | ![tldr-pages compliance level for tealdeer](https://SethFalco.github.io/tldr-pages-test-harness/tealdeer.png) |
+| [tldr-c-client](https://github.com/tldr-pages/tldr-c-client) | ![tldr-pages compliance level for tldr-c-client](https://SethFalco.github.io/tldr-pages-test-harness/tldr-c-client.png) |
 | [tldr-node-client](https://github.com/tldr-pages/tldr-node-client) | ![tldr-pages compliance level for tldr-node-client](https://SethFalco.github.io/tldr-pages-test-harness/tldr-node-client.png) |
+| [tldr-python-client](https://github.com/tldr-pages/tldr-python-client) | ![tldr-pages compliance level for tldr-python-client](https://SethFalco.github.io/tldr-pages-test-harness/tldr-python-client.png) |
+| [tlrc](https://github.com/tldr-pages/tlrc) | ![tldr-pages compliance level for tlrc](https://SethFalco.github.io/tldr-pages-test-harness/tlrc.png) |
 
 ## Usage
 
