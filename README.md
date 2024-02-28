@@ -32,13 +32,25 @@ You can run the `validate` task to test the `tldr` command found on your path:
 make validate
 ```
 
-Alternatively, you can test any arbitrary binary by specifying the `PATH_TO_TLDR_CLIENT` environment variable before hand:
+Alternatively, you can test any arbitrary binary by specifying the `PATH_TO_TLDR_CLIENT` environment variable:
 
 ```sh
 PATH_TO_TLDR_CLIENT={{path/to/binary}} make validate
 ```
 
 There are also the `validate-level-2` and `validate-level-3` tasks to check if clients adhere to optional parts of the spec.
+
+### Docker
+
+You can execute the tests for a predefined tldr-pages client even if you don't have it installed, so long as the Dockerfile is available for the client.
+
+Check the contents of the `dockerfiles/` directory, and run the `CLIENT={{client}} docker-validate` command, populating the `CLIENT` environment variable with the client to test. For example:
+
+```sh
+CLIENT=tldr-c-client make docker-validate
+```
+
+You can also run `docker-validate-level-2` or `docker-validate-level-3` to check optional parts of the spec.
 
 ## Dependencies
 
