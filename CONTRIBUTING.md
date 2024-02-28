@@ -40,8 +40,7 @@ It's preferred to get the binary from the latest release or an authoritative sou
 You can execute a Dockerfile with the following commands:
 
 ```sh
-docker build -t tldr-test:client-name -f dockerfiles/client-name/Dockerfile .
-docker run -it tldr-test:client-name make validate
+CLIENT={{client-name}} make docker-validate
 ```
 
 ### Makefile
