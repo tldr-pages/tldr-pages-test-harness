@@ -15,17 +15,17 @@ validate-level-3:
 .PHONY: docker-validate
 docker-validate: is-client-defined
 	docker build -t tldr-test:$$CLIENT -f dockerfiles/$$CLIENT/Dockerfile .
-	docker run -it tldr-test:$$CLIENT make validate
+	docker run tldr-test:$$CLIENT make validate
 
 .PHONY: docker-validate-level-2
 docker-validate-level-2: is-client-defined
 	docker build -t tldr-test:$$CLIENT -f dockerfiles/$$CLIENT/Dockerfile .
-	docker run -it tldr-test:$$CLIENT make validate-level-2
+	docker run tldr-test:$$CLIENT make validate-level-2
 
 .PHONY: docker-validate-level-3
 docker-validate-level-3: is-client-defined
 	docker build -t tldr-test:$$CLIENT -f dockerfiles/$$CLIENT/Dockerfile .
-	docker run -it tldr-test:$$CLIENT make validate-level-3
+	docker run tldr-test:$$CLIENT make validate-level-3
 
 test-clients:
 	@mkdir -p /tmp/dist
