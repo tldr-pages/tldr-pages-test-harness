@@ -1,4 +1,5 @@
 .github
+.gitattributes
 .editorconfig
 *.md
 LICENSE
