@@ -12,7 +12,9 @@
 
 ## About
 
-This is a Bats test-suite that validates if a tldr-pages client is compatible with the [client specifications](https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md) set out in the [tldr](https://github.com/tldr-pages/tldr) repository.
+A Bats test-suite that validates if a tldr-pages client is compatible with the [client specifications](https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md) set out in the [tldr](https://github.com/tldr-pages/tldr) repository.
+
+You can see a summary of each test, including links to the relevant sections of the specification in the [`tldr.bats`](./tldr.bats) file.
 
 ## Results
 
@@ -24,9 +26,11 @@ This is a Bats test-suite that validates if a tldr-pages client is compatible wi
 | [tldr-python-client](https://github.com/tldr-pages/tldr-python-client) | ![tldr-pages compliance level for tldr-python-client](https://tldr.sh/tldr-pages-test-harness/tldr-python-client.png) |
 | [tlrc](https://github.com/tldr-pages/tlrc) | ![tldr-pages compliance level for tlrc](https://tldr.sh/tldr-pages-test-harness/tlrc.png) |
 
-## Usage
+## Running Against Local Builds
 
-You can run the `validate` task to test the `tldr` command found on your path:
+This is for if you want to check the results for a particular client, or are a maintainer of a tldr-pages client and want to run your development build against our compliance test suite.
+
+Run the `validate` task to test the `tldr` command found on your path:
 
 ```sh
 make validate
