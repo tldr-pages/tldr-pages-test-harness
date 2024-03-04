@@ -155,6 +155,17 @@ setup() {
   [[ "$output" = *"https://manned.org/7z"* ]]
 }
 
+# Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#page-structure
+# bats test_tags=required
+@test "REQUIRED: supports escaping the placeholder syntax" {
+  run $PATH_TO_TLDR_CLIENT docker inspect
+  [[ $status -eq 0 ]]
+  [[ "$output" = *"{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"* ]]
+  run $PATH_TO_TLDR_CLIENT --platform windows mount
+  [[ $status -eq 0 ]]
+  [[ "$output" = *"\\computer_name\share_name"* ]]
+}
+
 # Source: https://github.com/tldr-pages/tldr/blob/main/CLIENT-SPECIFICATION.md#arguments
 # bats test_tags=optional
 @test "OPTIONAL: supports --list argument to list all pages" {
