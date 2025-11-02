@@ -10,7 +10,7 @@ jobs:
       - name: Run test suite
         run: make test-clients
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: /tmp/dist
   deploy:
